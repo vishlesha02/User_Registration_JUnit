@@ -20,5 +20,22 @@ public class UserRegistration {
             return false;
         }
 
+    public boolean lastName(String lastName) {
+
+        try {
+            if(Pattern.matches("[A-Z]{1}[a-zA-z]{2,}", lastName))
+                return true;
+
+            else {
+                throw new UseRegistrationException("Inavlid Last Name");
+            }
+
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return false;
     }
+}
 

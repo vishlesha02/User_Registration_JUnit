@@ -11,4 +11,11 @@ public class UserRegistrationTest {
         boolean  name = obj.firstName("Vishlesha");
         Assertions.assertTrue((name));
     }
+
+    @Test
+    public void given_LastName_Is_Valid_Or_Not()
+    {
+        boolean lastName = obj.lastName("Mortale");
+        Assertions.assertTrue((lastName));
+    }
 }
