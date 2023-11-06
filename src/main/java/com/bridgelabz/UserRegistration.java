@@ -77,5 +77,24 @@ public class UserRegistration {
         return false;
     }
 
+    public boolean password(String password) {
+        try
+        {
+            if(Pattern.matches("[a-z]{8,}", password))
+            {
+                return true;
+            }
+            else {
+                throw new UseRegistrationException("Minimum 8 Characters required");
+
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
 }
 

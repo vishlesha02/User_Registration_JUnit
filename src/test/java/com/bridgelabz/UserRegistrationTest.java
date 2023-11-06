@@ -33,4 +33,10 @@ public class UserRegistrationTest {
         Assertions.assertTrue(phoneNumber);
     }
 
+    @Test
+    public void given_PasswordHas_Minimum_8Characters()
+    {
+        boolean password=obj.password("passwordss");
+        Assertions.assertTrue(password);
+    }
 }
