@@ -39,4 +39,12 @@ public class UserRegistrationTest {
         boolean password=obj.password("passwordss");
         Assertions.assertTrue(password);
     }
+
+
+    @Test
+    public void given_Password_Has_Minimum_Eight_Characters_And_One_UpperCaseLetter()
+    {
+        boolean password = obj.passwordWithOneUpperCaseLetter("passWordss");
+        Assertions.assertTrue(password);
+    }
 }
