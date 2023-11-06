@@ -55,5 +55,27 @@ public class UserRegistration {
             }
             return false;
     }
+
+
+    public boolean phoneNumber(String phoneNumber) {
+
+        try
+        {
+            if (Pattern.matches("^91\\s\\d{10}$", phoneNumber))
+                return true;
+
+            else
+            {
+                throw new UseRegistrationException("Invalid Phone Number");
+            }
+        }
+        catch (Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+
+        return false;
+    }
+
 }
 

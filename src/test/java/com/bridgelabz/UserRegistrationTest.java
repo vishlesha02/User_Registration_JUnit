@@ -25,4 +25,12 @@ public class UserRegistrationTest {
         boolean mailId = obj.mailId("vish.mor@bl.co.in");
         Assertions.assertTrue((mailId));
     }
+
+    @Test
+    public void given_PhoneNumber_Is_Valid_Or_Not()
+    {
+        boolean phoneNumber = obj.phoneNumber("91 9876543210");
+        Assertions.assertTrue(phoneNumber);
+    }
+
 }
