@@ -1,5 +1,6 @@
 package com.bridgelabz;
 
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
@@ -36,6 +37,23 @@ public class UserRegistration {
             System.out.println(e.getMessage());
         }
         return false;
+    }
+
+    public boolean mailId(String mailId) {
+            try{
+                if(Pattern.matches("^[a-z]{2,}\\.[a-z]{3,}?@(bl)\\.(co)(\\.in)?$", mailId))
+                {
+                    return true;
+                }
+                else {
+                    throw new UseRegistrationException("Invalid Mail Id");
+                }
+            }
+            catch(Exception e)
+            {
+                System.out.println(e.getMessage());
+            }
+            return false;
     }
 }
 

@@ -18,4 +18,11 @@ public class UserRegistrationTest {
         boolean lastName = obj.lastName("Mortale");
         Assertions.assertTrue((lastName));
     }
+
+    @Test
+    public void given_MailID_Is_Valid_Or_Not()
+    {
+        boolean mailId = obj.mailId("vish.mor@bl.co.in");
+        Assertions.assertTrue((mailId));
+    }
 }
