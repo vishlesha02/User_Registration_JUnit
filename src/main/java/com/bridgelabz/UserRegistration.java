@@ -3,6 +3,7 @@ package com.bridgelabz;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
+
     public boolean firstName(String name) {
 
         try {
@@ -101,6 +102,23 @@ public class UserRegistration {
             }
         }
         catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
+
+    public boolean passwordWithAtleastOneUpperCaseLetterAndOneNumberAndExactlyOneSpecialCharacter(String password)
+    {
+        try{
+            if(Pattern.matches("^(?=(.*[A-Z]))(?=(.*\\d))(?=(.*[!@#$%^&*]))[A-Za-z\\d!@#$%^&*]{6,20}$",password))
+
+            return true;
+            else {
+                throw new UseRegistrationException("Exactly one special character required");
+            }
+        }
+        catch (Exception e)
         {
             System.out.println(e.getMessage());
         }

@@ -53,4 +53,10 @@ public class UserRegistrationTest {
     {
         Assertions.assertEquals(true,obj.passwordWithOneUpperCaseLetterAndOneNumericNumber("passworD7"));
     }
+
+    @Test
+    public void given_Password_Has_Minimum_Eight_Characters_And_Atleast_One_UpperCaseLetter_And_One_Number_And_Exactly_One_SpecialCharacter()
+    {
+        Assertions.assertEquals(true,obj.passwordWithAtleastOneUpperCaseLetterAndOneNumberAndExactlyOneSpecialCharacter("PAsswordss@8"));
+    }
 }
