@@ -91,5 +91,20 @@ public class UserRegistration {
         return false;
     }
 
+    public boolean passwordWithOneUpperCaseLetterAndOneNumericNumber(String password) {
+        try
+        {
+            if(Pattern.matches("^(?=.*[A-Z])(?=.*\\d)[A-Za-z\\d]{6,}$",password))
+                return true;
+            else {
+                throw new UseRegistrationException("Atleast One Numberic number required");
+            }
+        }
+        catch(Exception e)
+        {
+            System.out.println(e.getMessage());
+        }
+        return false;
+    }
 }
 
