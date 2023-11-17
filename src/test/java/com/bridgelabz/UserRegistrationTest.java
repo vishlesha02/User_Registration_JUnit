@@ -2,6 +2,8 @@ package com.bridgelabz;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.ParameterizedTest;
+import org.junit.jupiter.params.provider.CsvSource;
 
 public class UserRegistrationTest {
     UserRegistration obj=new UserRegistration();
@@ -59,4 +61,26 @@ public class UserRegistrationTest {
     {
         Assertions.assertEquals(true,obj.passwordWithAtleastOneUpperCaseLetterAndOneNumberAndExactlyOneSpecialCharacter("PAsswordss@8"));
     }
+
+    @ParameterizedTest
+    @CsvSource({
+            "abc,false",
+            "abc@.com.my,true",
+            "abc123@gmail.a,false",
+            "abc123@.com, false",
+            "abc123@.com.com, true",
+            ".abc@abc.com, true",
+            "abc()*@gmail.com, false",
+            "abc@%*.com, false",
+            "abc..2002@gmail.com, true",
+            "abc.@gmail.com, true",
+            "abc@abc@gmail.com, false",
+            "abc@gmail.com.1a, false",
+            "abc@gmail.com.aa.au, true"
+    })
+    public void testGivenInValidEmails(String email, boolean expected){
+        boolean res = UserRegistration.mailId(email);
+        Assertions.assertEquals(expected,res);
+    }
+
 }

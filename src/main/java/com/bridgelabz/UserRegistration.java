@@ -34,9 +34,10 @@ public class UserRegistration {
         return false;
     }
 
-    public boolean mailId(String mailId) {
+    public static boolean mailId(String mailId) {
         try {
-            if (Pattern.matches("^[a-z]{2,}\\.[a-z]{3,}?@(bl)\\.(co)(\\.in)?$", mailId)) {
+            if (Pattern.matches("^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$", mailId)) {
+                System.out.println("Valid Mail Id");
                 return true;
             } else {
                 throw new UseRegistrationException("Invalid Mail Id");
@@ -124,5 +125,7 @@ public class UserRegistration {
         }
         return false;
     }
+
+
 }
 
