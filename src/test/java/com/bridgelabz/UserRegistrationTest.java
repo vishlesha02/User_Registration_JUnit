@@ -10,35 +10,35 @@ public class UserRegistrationTest {
     @Test
     public void given_FirstName_Is_Valid_Or_Not()
     {
-        boolean  name = obj.firstName("Vishlesha");
+        boolean  name = UserRegistration.firstName("Vishlesha");
         Assertions.assertTrue((name));
     }
 
     @Test
     public void given_LastName_Is_Valid_Or_Not()
     {
-        boolean lastName = obj.lastName("Mortale");
+        boolean lastName = UserRegistration.lastName("Mortale");
         Assertions.assertTrue((lastName));
     }
 
     @Test
     public void given_MailID_Is_Valid_Or_Not()
     {
-        boolean mailId = obj.mailId("vish.mor@bl.co.in");
+        boolean mailId = UserRegistration.mailId("vish.mor@bl.co.in");
         Assertions.assertTrue((mailId));
     }
 
     @Test
     public void given_PhoneNumber_Is_Valid_Or_Not()
     {
-        boolean phoneNumber = obj.phoneNumber("91 9876543210");
+        boolean phoneNumber = UserRegistration.phoneNumber("91 9876543210");
         Assertions.assertTrue(phoneNumber);
     }
 
     @Test
     public void given_PasswordHas_Minimum_8Characters()
     {
-        boolean password=obj.password("passwordss");
+        boolean password=UserRegistration.password("passwordss");
         Assertions.assertTrue(password);
     }
 
